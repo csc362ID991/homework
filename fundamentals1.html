@@ -1,0 +1,57 @@
+
+<head>
+  <script type="application/javascript">
+    function fundamentals1(n){
+      let intArray = [];
+      for (i=n; i>0; i--){
+        if(n%i==0){
+          intArray.push(i);
+        }
+      }
+      return intArray;
+    }
+
+    function promptInt(){
+      var int = prompt("please enter an integer.");
+      if(int != null && int%1 == 0){
+        return int;
+      }
+      else{
+        return;
+      }
+    }
+  </script>
+</head>
+<style>
+  svg{
+    border: solid 1px lightgray;
+
+  }
+</style>
+<body>
+  <header>
+    Fundamentals 1
+  </header>
+  <svg id="chart" width="600" height="300"> </svg>
+  <script src="https://d3js.org/d3.v5.min.js"> </script>
+  <script>
+    let int = promptInt();
+    const array = fundamentals1(int)
+    d3.select("#chart")
+      .selectAll("circle")
+      .data(array)
+      .enter()
+      .append("circle")
+        .attr("r", d => d)
+        .attr("cy", 100)
+        .attr("cx", d => d*10)
+        .style("opacity", .5)
+
+
+
+
+
+  </script>
+
+
+</body>
