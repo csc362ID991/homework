@@ -26,10 +26,53 @@ Anomalized for Github purposes?
     .purple {
         color: #984ea3;
     }
+    .orange{
+        color: yellow;
+        background-color: orange;
+    }
+    .centered{
+        text-align: center;
+    }
+    .indented{
+        padding-left: 30px;
+    }
   </style>
 
   <script>
     //your code goes here
+    // d3.selectAll('div').classed('red', true);
+    // d3.selectAll('div').each(function(d,i){
+    //   d3.select(this).append('p').text('Index:' + i);
+    //   if(i%2==0){
+    //     d3.select(this).classed('red', false);
+    //   } THESE ARE EXPERIMENT CODES FOR REFERENCE
+    // })
+    d3.selectAll('div').classed('indented',true)
+    d3.select('#header')
+      .classed('orange', true)
+      .classed('centered', true)
+      .append('h1').text("This webpage talks about the four data types from NOIR")
+    d3.select('#nominal')
+      .classed('red', true)
+      .append('h3').text('Nominal Data:')
+      .append('p').text('Nominal datas are non-ordered data.' )
+      .append('p').text('For example, country name is a nominal data. The name of countries cannot be ranked.')
+
+    d3.select('#ordinal')
+      .classed('green', true)
+      .append('h3').text('Ordinal Data:')
+      .append('p').text('Ordinal datas are ordered data that have no fixed interval.' )
+      .append('p').text('For example, GDP ranking is a nominal data. While a higher ranking is higher than a lower ranking, the ranks cannot be added or subtracted to reach meaningful results, because there is no fixed interval.')
+    d3.select('#interval')
+      .classed('blue', true)
+      .append('h3').text('Interval Data:')
+      .append('p').text('Interval datas are ordered data that have fixed interval, but no true zero value.' )
+      .append('p').text('For example, average temperature of a country in Celsius is an interval data. The difference between each degree of temperature is fixed, but 0 degree is not the absence of temperature.')
+    d3.select('#ratio')
+      .classed('purple', true)
+      .append('h3').text('Ratio Data:')
+      .append('p').text('Ratio datas are ordered data that have fixed interval and true zero value.' )
+      .append('p').text('For example, national GDP is a ratio data. Each currency unit of GDP worth the same, and 0 GDP means no production.')
 
   </script>
 
